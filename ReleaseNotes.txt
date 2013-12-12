@@ -1,0 +1,36 @@
+﻿00.00.05
+
+- Restructured database tables.
+- AddStudent and AddSubject added and implemented.
+
+
+00.00.04
+
+Bugs
+- Student first and last name was not seperated. Added nbsp.
+
+Features
+- Implemented iPortable interface for export and import feature.
+- Implemented iSearchable inteface for search feature.
+- Input Grades button
+
+
+00.00.03
+
+Features
+- Added 'Subject' dropdown list to view subjects.
+- Subject dropdown list will show subjects depending on which student chosen in Student dropdown list.
+
+
+00.00.02
+
+Bugs
+- Fixed module settings throwing critical error.
+- Manifest file missing 00.00.01 sql install script.
+
+Features
+- Added 'Add' buttons to view control.
+
+
+00.00.01
+First Release.

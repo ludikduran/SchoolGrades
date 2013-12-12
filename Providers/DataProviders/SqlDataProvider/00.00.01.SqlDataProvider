@@ -1,0 +1,56 @@
+﻿/************************************************************/
+/*****              SqlDataProvider                     *****/
+/*****                                                  *****/
+/*****                                                  *****/
+/***** Note: To manually execute this script you must   *****/
+/*****       perform a search and replace operation     *****/
+/*****       for {databaseOwner} and {objectQualifier}  *****/
+/*****                                                  *****/
+/************************************************************/
+
+/** Subjects table **/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}LD2_SchoolGrades_Subjects]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}LD2_SchoolGrades_Subjects]
+GO
+
+CREATE TABLE {databaseOwner}{objectQualifier}LD2_SchoolGrades_Subjects
+    (
+		SubjectId int NOT NULL IDENTITY (1,1),
+		SubjectName nvarchar(MAX) NOT NULL,
+		SubjectGrade nvarchar(MAX) NULL,
+		SubjectComment nvarchar(MAX) NULL,
+		StudentId int NOT NULL
+	) ON [PRIMARY]
+	TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}LD2_SchoolGrades_Subjects ADD CONSTRAINT
+	PK_{objectQualifier}LD2_SchoolGrades_Subjects PRIMARY KEY CLUSTERED
+	(
+		SubjectId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+/** Students Table **/
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}LD2_SchoolGrades_Students]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}LD2_SchoolGrades_Students]
+GO
+
+CREATE TABLE {databaseOwner}{objectQualifier}LD2_SchoolGrades_Students
+    (
+		StudentId int NOT NULL IDENTITY (1,1),
+		StudentName nvarchar(MAX) NOT NULL,
+	) ON [PRIMARY]
+	TEXTIMAGE_ON [PRIMARY]
+GO
+
+ALTER TABLE {databaseOwner}{objectQualifier}LD2_SchoolGrades_Students ADD CONSTRAINT
+	PK_{objectQualifier}LD2_SchoolGrades_Students PRIMARY KEY CLUSTERED
+	(
+		StudentId
+	) WITH( STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+GO
+
+/************************************************************/
+/*****              SqlDataProvider                     *****/
+/************************************************************/

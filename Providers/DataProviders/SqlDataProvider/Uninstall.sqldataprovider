@@ -1,0 +1,11 @@
+﻿IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}LD2_SchoolGrades_Subjects]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}LD2_SchoolGrades_Subjects]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}LD2_SchoolGrades_Students]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}LD2_SchoolGrades_Students]
+GO
+
+IF  EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'{databaseOwner}[{objectQualifier}LD2_SchoolGrades_Classes]') AND type in (N'U'))
+DROP TABLE {databaseOwner}[{objectQualifier}LD2_SchoolGrades_Classes]
+GO
